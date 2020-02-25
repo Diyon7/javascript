@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<script language="Javascript">
+    document.write("Dimodifikasi pada" + document.lastModified);
+
+    function tambah() {
+        var val1 = Number(document.kirim.T1.value)
+        var val2 = Number(document.kirim.T2.value)
+        document.kirim.hasil.value = (val1 + val2)
+    }
+    function kurang() {
+        var val1 = document.kirim.T1.value
+        var val2 = document.kirim.T2.value
+        document.kirim.hasil.value = (val1 - val2)
+    }
+    function kali() {
+        var val1 = document.kirim.T1.value
+        var val2 = document.kirim.T2.value
+        document.kirim.hasil.value = (val1 * val2)
+    }
+    function bagi() {
+        var val1 = document.kirim.T1.value
+        var val2 = document.kirim.T2.value
+        var jadi = (val1 / val2)
+        if (isNaN(jadi) == true) {
+            document.kirim.hasil.value = "Kesalahan"
+        } else {
+            document.kirim.hasil.value = jadi
+        }
+    }
+    function kosong() {
+        document.kirim.hasil.value = ""
+        document.kirim.T1.value = ""
+        document.kirim.T2.value = ""
+    }
+
+</script>
+
+<body>
+    <form method="POST" name="kirim">
+        <div class="form">
+            <label for="T1" class="label-name">Bil 1</label>
+            <input type="number" name="T1" id="inputt" size="20" placeholder="bil 1"><br>
+            <label for="T1" class="label-name">Bil 2</label>
+            <input type="number" name="T2" size="20" id="inputt" placeholder="bil 2"><br>
+            <input type="button" id="button" value="tambah" onclick=tambah()>
+            <input type="button" id="button" value="kurang" onclick=kurang()>
+            <input type="button" id="button" value="kali" onclick=kali()>
+            <input type="button" id="button" value="bagi" onclick=bagi()><br>
+            <input type="button" id="button" style="width: 55px;" value="hapus" onclick=kosong()>
+            <input name="hasil" id="hasil" placeholder="Hasil" disabled=true>
+        </div>
+    </form>
+</body>
+
+</html>
